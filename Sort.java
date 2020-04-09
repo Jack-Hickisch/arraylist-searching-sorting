@@ -122,5 +122,18 @@ public class Sort
 
         bubbleSort(fruits2);
         System.out.println(fruits2.toString());
+
+        ArrayList<String> fruits20 = new ArrayList<String>(Arrays.asList("pear", "banana", "raspberry", "apple", "lime", "mango", "apricot", "watermelon", "lemon", "blueberry", "blueberry"));
+        ArrayList<String> fruits21 = new ArrayList<String>(Arrays.asList("pear", "banana", "raspberry", "apple", "lime", "mango", "apricot", "watermelon", "lemon", "blueberry", "blueberry"));
+        ArrayList<String> fruits22 = new ArrayList<String>(Arrays.asList("pear", "banana", "raspberry", "apple", "lime", "mango", "apricot", "watermelon", "lemon", "blueberry", "blueberry"));
+
+        selectionSort(fruits20);
+        System.out.println(fruits20.toString());
+
+        insertionSort(fruits21);
+        System.out.println(fruits21.toString());
+
+        bubbleSort(fruits22);
+        System.out.println(fruits22.toString());
     }
 }
