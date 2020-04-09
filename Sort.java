@@ -23,7 +23,30 @@ public class Sort
         }
     }
 
+    public static void insertionSort(ArrayList<String> list)
+    {
+        int elementsOn = 2;
+        boolean inOrder = false;
 
+        while (elementsOn != list.size())
+        {
+            while (!inOrder)
+            {
+                inOrder = true;
+                for (int i = 0; i < elementsOn; i++)
+                {
+                    if (isBeforeNeedle(list.get(i), list.get(i + 1)))
+                    {
+                        Collections.swap(list, i, i + 1);
+                        inOrder = false;
+                    }
+                }
+            }
+            elementsOn++;
+            inOrder = false;           
+        }
+
+    }
 
     public static boolean isBeforeNeedle(String test, String needle) // 2 words
     {
@@ -70,9 +93,14 @@ public class Sort
 
     public static void main(String[] args)
     {
-        ArrayList<String> fruits = new ArrayList<String>(Arrays.asList("mango", "banana", "strawberry", "cherry", "lime", "pear", "apple", "watermelon", "lemon", "blueberry", "orange"));
+        ArrayList<String> fruits0 = new ArrayList<String>(Arrays.asList("mango", "banana", "strawberry", "cherry", "lime", "pear", "apple", "watermelon", "lemon", "blueberry", "orange"));
+        ArrayList<String> fruits1 = new ArrayList<String>(Arrays.asList("mango", "banana", "strawberry", "cherry", "lime", "pear", "apple", "watermelon", "lemon", "blueberry", "orange"));
+        ArrayList<String> fruits2 = new ArrayList<String>(Arrays.asList("mango", "banana", "strawberry", "cherry", "lime", "pear", "apple", "watermelon", "lemon", "blueberry", "orange"));
 
-        selectionSort(fruits);
-        System.out.println(fruits.toString());
+        selectionSort(fruits0);
+        System.out.println(fruits0.toString());
+
+        insertionSort(fruits1);
+        System.out.println(fruits1.toString());
     }
 }
